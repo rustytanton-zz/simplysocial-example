@@ -4,9 +4,18 @@
 		<a class="add-photo-link">Add Photo</a>
 		<a class="add-video-link">Add Video</a>
 	</form>
+	<nav>
+		<ul>
+			<li><a href="/"></a></li>
+			<li><a href="/photos"></a></li>
+			<li><a href="/videos"></a></li>
+		</ul>
+		<button class="list-button" ng-click="grid=false"></button>
+		<button class="grid-button" ng-click="grid=true"></button>
+	</nav>
 </section>
 
-<section class="messages">
+<section ng-class="{ grid : grid, list : !grid }" class="messages">
 
 	<div ng-repeat="message in messages">
 		<div class="message message-{{type}}">
