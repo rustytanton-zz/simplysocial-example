@@ -1,0 +1,26 @@
+<section class="messagesBanner">
+	<form class="message-banner-enter-message" name="message">
+		<textarea></textarea>
+		<a class="add-photo-link">Add Photo</a>
+		<a class="add-video-link">Add Video</a>
+	</form>
+</section>
+
+<section class="messages">
+
+<div ng-repeat="message in messages">
+	<div class="message message-{{type}}">
+		<img class="user-avatar" alt="" ng-src="{{message.avatar}}" />
+		<h3>{{message.title}}</h3>
+		<div class="content">{{message.content}}</div>
+	</div>
+	<div ng-repeat="comment in message.comments">
+		<div class="comment">
+			<img class="user-avatar" alt="" ng-src="{{comment.avatar}}" />
+			<h3>{{comment.title}}</h3>
+			<div class="content">{{comment.content}}</div>
+		</div>
+	</div>
+</div>
+
+</section>

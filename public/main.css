@@ -1,0 +1,241 @@
+/* fonts */
+@font-face {
+    font-family: ProximaNova-Regular;
+    src: url('/fonts/ProximaNova-Regular.otf');
+}
+
+/* kellum method, see: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ */
+.hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* basic reset + defaults */
+* {
+	border-width: 0px;
+	font-family: ProximaNova-Regular, arial, helvetica, sans-serif;
+	list-style: none;
+	margin: 0;
+	outline-width: 0px;
+	padding: 0;
+}
+
+/* global */
+a {
+	cursor: pointer;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;	
+}
+.blur10px {
+	-webkit-filter: blur(10px);
+	-moz-filter: blur(10px);
+	-ms-filter: blur(10px);
+	filter: blur(10px);
+}
+
+/* app header */
+header {
+	position: relative;
+}
+header h1,
+.header-new-message,
+.header-search,
+.header-user-picture,
+.header-user-menu {
+	position: absolute;
+}
+.header-menubar {
+	background: #262728;
+	min-height: 60px;
+	min-width: 320px;
+}
+.mobile .header-menubar {
+	min-height: 100px;
+}
+header h1 {
+	background: url('/images/sprite-header.png') 0 -58px no-repeat;
+	height: 34px;
+	width: 138px;
+}
+.tablet header h1,
+.desktop header h1 {
+	left: 93px;
+	top: 8px;
+}
+.mobile header h1 {
+	background-position: center -58px;
+	top: 12px;
+	width: 100%;
+}
+.header-new-message {
+	background: #262728 url('/images/sprite-header.png') 0px -32px no-repeat;
+	display: block;
+	height: 26px;
+	width: 31px;
+}
+.tablet .header-new-message,
+.desktop .header-new-message {
+	top: 14px;
+	right: 383px;
+}
+.mobile .header-new-message {
+	top: 14px;
+	right: 10px;
+}
+.header-user-picture {
+	background: #262728 url('/images/sprite-header.png') 0 0 no-repeat;
+	padding-right: 15px;
+	cursor: pointer;
+}
+.tablet .header-user-picture,
+.desktop .header-user-picture {
+	top: 12px;
+	right: 98px;
+}
+.mobile .header-user-picture {
+	top: 52px;
+	right: 10px;
+}
+.header-user-menu {
+	background: #f4f4f4 url('/images/sprite-header.png') 0px -92px no-repeat;
+	font-size: 13px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	width: 96px;
+}
+.mobile .header-user-menu {
+	right: 5px;
+	top: 92px;
+}
+.tablet .header-user-menu,
+.desktop .header-user-menu {
+	right: 85px;
+	top: 52px;
+}
+.header-user-menu li {
+	border-bottom: 1px #dee1e5 solid;
+	color: #93989f;
+	padding: 10px 5px 10px 15px;
+}
+.header-user-menu li:last-child {
+	border-bottom: none;
+}
+header input {
+	background: #262728 url('/images/sprite-header.png') 173px 4px no-repeat;
+	border: 1px #5c5f63 solid;
+	border-radius: 5px;
+	color: #fff;
+	height: 11px;
+	padding: 7px;
+	width: 183px;
+}
+.header-search {
+	width: 183px;
+}
+.tablet .header-search,
+.desktop .header-search {
+	top: 13px;
+	right: 181px;
+}
+.mobile .header-search {
+	position: relative;
+	margin: 0 auto;
+	padding-top: 50px;
+	right: auto;
+}
+
+/* create message form */
+.create-message-form-modal-bg {
+	background: #000;
+	height: 100%;
+	left: 0;
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+.create-message-form-wrapper {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+.create-message-form {
+	background: #dee1e5;
+	border-radius: 3px;
+	min-height: 165px;
+	margin: 175px auto 0 auto;
+	padding: 20px;
+	width: 50%;
+}
+.mobile .create-message-form {
+	border-radius: 0;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	width: 100%;
+}
+.create-message-form h2 {
+	color: #70767f;
+	font-size: 17px;
+	margin-bottom: 20px;
+}
+.create-message-form textarea {
+	height: 85px;
+	font-size: 15px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+.create-message-form .add-photo-link,
+.create-message-form .add-video-link {
+	color: #a7abb2;
+	font-size: 15px;
+	margin-top: 7px;
+	padding: 3px 40px 0 27px;
+}
+.create-message-form .add-photo-link {
+	background: transparent url('/images/sprite-header.png') 0 -104px no-repeat;
+}
+.create-message-form .add-video-link {
+	background: transparent url('/images/sprite-header.png') 0 -123px no-repeat;
+}
+.create-message-form button {
+	background: #00b286;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	float: right;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 8px 20px;
+}
+.close-message-form {
+	background: transparent url('/images/sprite-header.png') -118px 0 no-repeat;
+	height: 21px;
+	margin: 0 auto;
+	position: absolute;
+	top: 175px;
+	right: 18%;
+	width: 21px;
+	z-index: 2;
+}
+.mobile .close-message-form {
+	right: 10px;
+	top: 10px;
+}
+
+/* messages banner */
+.messages-banner {
+	clear: both;
+}
+.messages {
+	clear:both;
+	-webkit-column-count: 3; 
+    -moz-column-count: 3;
+    column-count: 3;
+}
+

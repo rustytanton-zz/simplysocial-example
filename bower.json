@@ -1,0 +1,11 @@
+{
+  "name": "simplysocial",
+  "version": "0.0.1",
+  "authors": [
+    "Rusty Tanton <rusty.tanton@gmail.com> (http://rustytanton.com)"
+  ],
+  "dependencies": {
+    "angular": "~1.2.24",
+    "angular-route": "~1.2.24"
+  }
+}
