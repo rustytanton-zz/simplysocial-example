@@ -77,7 +77,7 @@ angular.module("simplysocial", ["ngRoute"])
 			{
 				avatar : "/images/user-picture-example.jpg",
 				name : "Sam Soffes",
-				content : "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!",
+				content : "Sed faucibus imperdiet tincidunt. Phasellus ut consectetur nibh, non egestas odio. Curabitur eu ultricies tellus, quis aliquam nisi. Morbi dolor ex, sollicitudin vel massa ut, scelerisque vulputate odio. Curabitur pretium sodales arcu sit amet vestibulum. Integer euismod commodo ultrices. Proin ante orci, accumsan sit amet tellus id, maximus faucibus ipsum.",
 				type : "text",
 				comments : [
 					{
@@ -89,6 +89,19 @@ angular.module("simplysocial", ["ngRoute"])
 						avatar : "/images/user-picture-example.jpg",
 						name : "Ren Walker",
 						content : "Feeling inspired npw... thanks for great article @designmodo"
+					}
+				]
+			},
+			{
+				avatar : "/images/user-picture-example.jpg",
+				name : "Sam Soffes",
+				content : "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ac leo non neque fringilla accumsan. Etiam velit diam, tristique a hendrerit ut, pretium sed diam.",
+				type : "text",
+				comments : [
+					{
+						avatar : "/images/user-picture-example.jpg",
+						name : "Jed Bridges",
+						content : "Great way to start the week. Thanks for sharing!"
 					}
 				]
 			},
@@ -115,6 +128,13 @@ angular.module("simplysocial", ["ngRoute"])
 				name : "Sam Soffes",
 				content : "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!",
 				type : "text",
+				comments : []
+			},
+			{
+				avatar : "/images/user-picture-example.jpg",
+				name : "Sam Soffes",
+				content : "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!",
+				type : "text",
 				comments : [
 					{
 						avatar : "/images/user-picture-example.jpg",
@@ -125,6 +145,37 @@ angular.module("simplysocial", ["ngRoute"])
 						avatar : "/images/user-picture-example.jpg",
 						name : "Ren Walker",
 						content : "Feeling inspired npw... thanks for great article @designmodo"
+					}
+				]
+			},
+			{
+				avatar : "/images/user-picture-example.jpg",
+				name : "Sam Soffes",
+				content : "Sed faucibus imperdiet tincidunt. Phasellus ut consectetur nibh, non egestas odio. Curabitur eu ultricies tellus, quis aliquam nisi. Morbi dolor ex, sollicitudin vel massa ut, scelerisque vulputate odio. Curabitur pretium sodales arcu sit amet vestibulum. Integer euismod commodo ultrices. Proin ante orci, accumsan sit amet tellus id, maximus faucibus ipsum.",
+				type : "text",
+				comments : [
+					{
+						avatar : "/images/user-picture-example.jpg",
+						name : "Jed Bridges",
+						content : "Great way to start the week. Thanks for sharing!"
+					},
+					{
+						avatar : "/images/user-picture-example.jpg",
+						name : "Ren Walker",
+						content : "Feeling inspired npw... thanks for great article @designmodo"
+					}
+				]
+			},
+			{
+				avatar : "/images/user-picture-example.jpg",
+				name : "Sam Soffes",
+				content : "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ac leo non neque fringilla accumsan. Etiam velit diam, tristique a hendrerit ut, pretium sed diam.",
+				type : "text",
+				comments : [
+					{
+						avatar : "/images/user-picture-example.jpg",
+						name : "Jed Bridges",
+						content : "Great way to start the week. Thanks for sharing!"
 					}
 				]
 			},
@@ -145,6 +196,13 @@ angular.module("simplysocial", ["ngRoute"])
 						content : "Feeling inspired npw... thanks for great article @designmodo"
 					}
 				]
+			},
+			{
+				avatar : "/images/user-picture-example.jpg",
+				name : "Sam Soffes",
+				content : "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!",
+				type : "text",
+				comments : []
 			}
 		];
 	})

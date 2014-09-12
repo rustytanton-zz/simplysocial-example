@@ -35,6 +35,15 @@ a:hover {
 	-ms-filter: blur(10px);
 	filter: blur(10px);
 }
+.submit-button {
+	background: #00b286;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 8px 20px;
+}
 
 /* app header */
 header {
@@ -132,6 +141,9 @@ header input {
 	padding: 7px;
 	width: 183px;
 }
+.mobile header input {
+	width: 150px;
+}
 .header-search {
 	width: 183px;
 }
@@ -190,8 +202,12 @@ header input {
 	margin-bottom: 10px;
 	width: 100%;
 }
+.mobile .create-message-form textarea {
+	width: 85%;
+}
 .create-message-form .add-photo-link,
 .create-message-form .add-video-link {
+	display: inline-block;
 	color: #a7abb2;
 	font-size: 15px;
 	margin-top: 7px;
@@ -204,14 +220,12 @@ header input {
 	background: transparent url('/images/sprite-header.png') 0 -123px no-repeat;
 }
 .create-message-form button {
-	background: #00b286;
-	border-radius: 2px;
-	color: #fff;
-	cursor: pointer;
 	float: right;
-	font-weight: bold;
-	font-size: 15px;
-	padding: 8px 20px;
+}
+.mobile .create-message-form button {
+	clear: both;
+	float: none;
+	margin-top: 20px;
 }
 .close-message-form {
 	background: transparent url('/images/sprite-header.png') -118px 0 no-repeat;
@@ -230,7 +244,11 @@ header input {
 
 /* messages banner */
 .messages-banner {
-	clear: both;
+	background: #eee;
+	height: 200px;
+}
+.mobile .messages-banner {
+	height: 100px;
 }
 .messages {
 	clear:both;
@@ -238,4 +256,43 @@ header input {
     -moz-column-count: 3;
     column-count: 3;
 }
+.tablet .messages {
+	-webkit-column-count: 2; 
+    -moz-column-count: 2;
+	column-count: 2;
+}
+.mobile .messages {
+	-webkit-column-count: 1; 
+    -moz-column-count: 1;
+	column-count: 1;
+}
+.message {
+	border: 1px red solid;
+	margin: 0 20px 20px 0;
+	padding: 20px;
+	overflow: hidden; /* fix for Firefox */
+	break-inside: avoid-column;
+	-webkit-column-break-inside: avoid;
+}
+.mobile .message {
+	margin: 0 20px 20px 20px;
+}
+.message .comment {
+	border: 1px blue solid;
+}
 
+/* settings */
+.settings label {
+	display: block;
+}
+.settings input {
+	border: 1px red solid;
+}
+.settings-subsection-notifications button {
+	background: red;
+	height: 25px;
+	width: 25px;
+}
+.settings-subsection-notifications button.toggled {
+	background: blue;
+}

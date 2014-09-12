@@ -6,6 +6,7 @@
 		<script src="/vendor/angular/angular.js"></script>
 		<script src="/vendor/angular-route/angular-route.js"></script>
 		<script src="/main.js"></script>
+		<meta name="viewport" content="width=device-width">
 	</head>
 	<body ss-device-profile>
 		<div ng-controller="ssHeaderController">
@@ -17,7 +18,7 @@
 					<textarea name="message"></textarea>
 					<a class="add-photo-link">Add Photo</a>
 					<a class="add-video-link">Add Video</a>
-					<button ng-click="postMessage()">Post</button>
+					<button class="submit-button" ng-click="postMessage()">Post</button>
 				</form>
 			</div>
 			<header>
