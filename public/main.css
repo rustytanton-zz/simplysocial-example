@@ -3,6 +3,14 @@
     font-family: ProximaNova-Regular;
     src: url('/fonts/ProximaNova-Regular.otf');
 }
+@font-face {
+    font-family: ProximaNova-Light;
+    src: url('/fonts/ProximaNova-Light.otf');
+}
+@font-face {
+    font-family: ProximaNova-Bold;
+    src: url('/fonts/ProximaNova-Bold.otf');
+}
 
 /* kellum method, see: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ */
 .hide-text {
@@ -228,38 +236,142 @@ header input {
 	margin-top: 20px;
 }
 .close-message-form {
-	background: transparent url('/images/sprite-header.png') -118px 0 no-repeat;
+	background: transparent url('/images/sprite-header.png') -118px -27px no-repeat;
+	clear: both;
 	height: 21px;
 	margin: 0 auto;
 	position: absolute;
 	top: 175px;
 	right: 18%;
-	width: 21px;
+	width: 23px;
 	z-index: 2;
 }
 .mobile .close-message-form {
+	background: transparent url('/images/sprite-header.png') -118px 0 no-repeat;
 	right: 10px;
 	top: 10px;
 }
 
 /* messages banner */
 .messages-banner {
-	background: #eee;
-	height: 200px;
+	background: url("images/background-hero.jpg") center 0 repeat-x;
+	height: 300px;
+	margin-bottom: 20px;
+	padding-top: 123px;
 }
 .mobile .messages-banner {
-	height: 100px;
+	padding-top: 0px;
+	height: 210px;
+}
+.messages-banner .buttons {
+	padding-top: 28px;
+}
+.messages-banner .buttons a {
+	color: rgba(255,255,255,0.7);
+	cursor: pointer;
+	height: 13px;
+}
+.messages-banner .buttons .add-photo-link {
+	background: url('images/sprite-hero-icons.png') 0 0 no-repeat;
+	padding: 0 25px;
+}
+.messages-banner .buttons .add-video-link {
+	background: url('images/sprite-hero-icons.png') 0 -27px no-repeat;
+	padding: 0 0 0 25px;
+}
+.message-banner-enter-message {
+	background: rgba(0, 178, 134, 0.7);
+	border-radius: 3px;
+	height: 70px;
+	margin: 0px auto;
+	padding: 40px 25px;
+	width: 575px;
+}
+.mobile .message-banner-enter-message {
+	padding: 40px 0 40px 5%;
+	width: 95%;
+}
+.message-banner-enter-message input {
+	background: none;
+	color: #fff;
+	font-family: ProximaNova-Light, arial, sans-serif;
+	font-size: 32px;
+}
+
+.message-banner-enter-message ::-webkit-input-placeholder { color: rgba(255,255,255,0.7); }
+.message-banner-enter-message ::-moz-placeholder { color:#fff; } /* firefox 19+ */
+.message-banner-enter-message :-ms-input-placeholder { color:#fff; } /* ie */
+.message-banner-enter-message input:-moz-placeholder { color:#fff; }
+.messages-banner nav {
+	margin: 0 auto;
+	padding-top: 110px;
+	width: 600px;
+}
+.mobile .messages-banner nav {
+	padding-left: 20px;
+	padding-top: 20px;
+	width: 275px;
+}
+.mobile .messages-banner nav button {
+	display: none;
+}
+.messages-banner nav ul,
+.messages-banner nav li,
+.messages-banner nav button {
+	display: inline-block;
+}
+.messages-banner nav ul {
+	padding-right: 200px;
+}
+.mobile .messages-banner nav ul {
+	margin: 0 auto;
+	padding-right: 0px;
+}
+.messages-banner nav a {
+	color: rgba(255, 255, 255, 0.5);
+	font-family: ProximaNova-Bold;
+	font-size: 13px;
+	margin-right: 43px;
+	padding: 0px 7px 20px 7px;
+	text-transform: uppercase;
+}
+.messages-banner nav a {
+	margin-right: 15px;
+}
+.messages-banner nav a.current {
+	border-bottom: 4px rgb(0, 178, 134) solid;
+	padding-bottom: 16px;
 }
 .grid-button,
 .list-button {
-	height: 25px;
-	width: 25px;
+	cursor: pointer;
+	height: 9px;
+	width: 9px;
 }
 .grid-button {
-	background: red;
+	background: url('images/sprite-hero-icons.png') 0 -108px no-repeat;
+}
+.grid-button.current {
+	background: url('images/sprite-hero-icons.png') 0 -90px no-repeat;
 }
 .list-button {
-	background: blue;
+	background: url('images/sprite-hero-icons.png') 0 -71px no-repeat;
+	margin: 0 12px 0 0;
+}
+.list-button.current {
+	background: url('images/sprite-hero-icons.png') 0 -51px no-repeat;
+}
+
+/* messages */
+.messages {
+	clear: both;
+	padding: 45px 160px;
+}
+.tablet .messages { 
+	padding: 45px 80px;
+}
+.mobile .messages { 
+	padding: 45px 20px;
 }
 .desktop .messages.grid {
 	-webkit-column-count: 3; 
@@ -272,18 +384,98 @@ header input {
 	column-count: 2;
 }
 .message {
-	border: 1px red solid;
+	border: 1px #dee1e5 solid;
+	border-radius: 3px;
+	color: #70767f;
 	margin: 0 20px 20px 0;
-	padding: 20px;
 	overflow: hidden; /* fix for Firefox */
 	break-inside: avoid-column;
 	-webkit-column-break-inside: avoid;
 }
+.message a {
+	color: #bec3cc;
+}
+.message h3 {
+	font-size: 17px;
+	margin-bottom: 15px;
+}
+.message .user-avatar {
+	display: block;
+	float: left;
+	margin-right: 15px;
+}
+.message-content {
+	float: left;
+	padding: 25px;
+}
+.message-content .content {
+	font-size: 16px;
+	line-height: 20px;
+	padding-left: 45px;
+}
+.comments-toggle {
+	background: #fff url('/images/sprite-message-icons.jpg') right -68px no-repeat;
+	clear: both;
+	display: block;
+	height: 15px;
+	font-size: 13px;
+	margin-bottom: 25px;
+	padding: 0 0 0 25px;
+	width: 65px;
+}
+.comments-toggle.expanded {
+	background: #fff url('/images/sprite-message-icons.jpg') right -47px no-repeat;
+	width: 70px;
+}
+.messages .content-photo {
+	display: block;
+	margin-bottom: 30px;
+	width: 100%;
+}
 .mobile .message {
 	margin: 0 20px 20px 20px;
 }
+.message .comment:first-child { 
+	border-top: 1px #dee1e5 solid;
+}
 .message .comment {
-	border: 1px blue solid;
+	background: #f9fafb;
+	border-bottom: 1px #dee1e5 solid;
+	clear: both;
+	min-height: 40px;
+	padding: 25px;
+}
+.message .leave-comment {
+	background: #f9fafb;
+	padding: 25px;
+}
+.message .leave-comment input {
+	border: 1px #dee1e5 solid;
+	border-radius: 3px;
+	font-size: 16px;
+	padding: 8px;
+	width: 95%;
+}
+.message nav {
+	clear: both;
+	margin-top: -40px;
+	padding: 0 25px 25px 0;
+	text-align: right;
+}
+.message-share {
+	background: #fff url('/images/sprite-message-icons.jpg') 0 -3px no-repeat;
+	height: 13px;
+	margin-right: 20px;
+	width: 13px;
+}
+.message-like {
+	background: #fff url('/images/sprite-message-icons.jpg') 0 -25px no-repeat;
+	height: 13px;
+	margin-right: 20px;
+	width: 15px;
+}
+.message-time {
+	color: #bec3cc;
 }
 
 /* settings */

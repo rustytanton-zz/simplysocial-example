@@ -1,4 +1,4 @@
-angular.module("simplysocial", ["ngRoute"])
+angular.module("simplysocial", ["ngSanitize","ngRoute"])
 
 	.directive("ssDeviceProfile", function($window) {
 		return {
@@ -54,12 +54,12 @@ angular.module("simplysocial", ["ngRoute"])
 	.controller("ssFollowersController", function() {})
 	.controller("ssFollowingController", function() {})
 
-	.controller("ssMessagesController", function($scope) {
-		$scope.messages = [
+	.controller("ssMessagesController", function($scope, $filter) {
+		$scope.allMessages = [
 			{
 				avatar : "/images/user-picture-example.jpg",
 				name : "Sam Soffes",
-				content : "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!",
+				content : "How to Get Inspired: the Right Way - Designmodo <a href=\"http://bit.ly/1lE4uJc\">bit.ly/1lE4uJc</a> Good stuff from <a href=\"http://twitter.com/designmodo\">@designmodo!</a>",
 				type : "text",
 				comments : [
 					{
@@ -72,7 +72,8 @@ angular.module("simplysocial", ["ngRoute"])
 						name : "Ren Walker",
 						content : "Feeling inspired npw... thanks for great article @designmodo"
 					}
-				]
+				],
+				time : "25m"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
@@ -90,20 +91,23 @@ angular.module("simplysocial", ["ngRoute"])
 						name : "Ren Walker",
 						content : "Feeling inspired npw... thanks for great article @designmodo"
 					}
-				]
+				],
+				time : "45m"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
 				name : "Sam Soffes",
 				content : "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ac leo non neque fringilla accumsan. Etiam velit diam, tristique a hendrerit ut, pretium sed diam.",
-				type : "text",
+				type : "photo",
+				src : "/images/message-picture-example1.jpg",
 				comments : [
 					{
 						avatar : "/images/user-picture-example.jpg",
 						name : "Jed Bridges",
 						content : "Great way to start the week. Thanks for sharing!"
 					}
-				]
+				],
+				time : "2h"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
@@ -121,14 +125,16 @@ angular.module("simplysocial", ["ngRoute"])
 						name : "Ren Walker",
 						content : "Feeling inspired npw... thanks for great article @designmodo"
 					}
-				]
+				],
+				time : "25m"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
 				name : "Sam Soffes",
 				content : "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!",
 				type : "text",
-				comments : []
+				comments : [],
+				time : "35m"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
@@ -146,13 +152,15 @@ angular.module("simplysocial", ["ngRoute"])
 						name : "Ren Walker",
 						content : "Feeling inspired npw... thanks for great article @designmodo"
 					}
-				]
+				],
+				time : "4h"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
 				name : "Sam Soffes",
 				content : "Sed faucibus imperdiet tincidunt. Phasellus ut consectetur nibh, non egestas odio. Curabitur eu ultricies tellus, quis aliquam nisi. Morbi dolor ex, sollicitudin vel massa ut, scelerisque vulputate odio. Curabitur pretium sodales arcu sit amet vestibulum. Integer euismod commodo ultrices. Proin ante orci, accumsan sit amet tellus id, maximus faucibus ipsum.",
-				type : "text",
+				type : "photo",
+				src : "/images/message-picture-example2.jpg",
 				comments : [
 					{
 						avatar : "/images/user-picture-example.jpg",
@@ -164,7 +172,8 @@ angular.module("simplysocial", ["ngRoute"])
 						name : "Ren Walker",
 						content : "Feeling inspired npw... thanks for great article @designmodo"
 					}
-				]
+				],
+				time : "1d"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
@@ -177,7 +186,8 @@ angular.module("simplysocial", ["ngRoute"])
 						name : "Jed Bridges",
 						content : "Great way to start the week. Thanks for sharing!"
 					}
-				]
+				],
+				time : "25m"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
@@ -195,16 +205,47 @@ angular.module("simplysocial", ["ngRoute"])
 						name : "Ren Walker",
 						content : "Feeling inspired npw... thanks for great article @designmodo"
 					}
-				]
+				],
+				time : "1h"
+			},
+			{
+				avatar : "/images/user-picture-example.jpg",
+				name : "Sam Soffes",
+				content : "Sed faucibus imperdiet tincidunt. Phasellus ut consectetur nibh, non egestas odio. Curabitur eu ultricies tellus, quis aliquam nisi. Morbi dolor ex, sollicitudin vel massa ut, scelerisque vulputate odio. Curabitur pretium sodales arcu sit amet vestibulum. Integer euismod commodo ultrices. Proin ante orci, accumsan sit amet tellus id, maximus faucibus ipsum.",
+				type : "video",
+				src : "/images/message-video-example1.jpg",
+				comments : [
+					{
+						avatar : "/images/user-picture-example.jpg",
+						name : "Jed Bridges",
+						content : "Great way to start the week. Thanks for sharing!"
+					},
+					{
+						avatar : "/images/user-picture-example.jpg",
+						name : "Ren Walker",
+						content : "Feeling inspired npw... thanks for great article @designmodo"
+					}
+				],
+				time : "25m"
 			},
 			{
 				avatar : "/images/user-picture-example.jpg",
 				name : "Sam Soffes",
 				content : "How to Get Inspired: the Right Way - Designmodo bit.ly/1lE4uJc Good stuff from @designmodo!",
 				type : "text",
-				comments : []
+				comments : [],
+				time : "35m"
 			}
 		];
+		$scope.filterMessages = function(type) {
+			$scope.messagesFilter = type;
+			if (type == 'all') {
+				$scope.messages = $scope.allMessages;
+			} else {
+				$scope.messages = $filter('filter')($scope.allMessages, { type : type }, true);
+			}
+		};
+		$scope.filterMessages('all');
 	})
 	
 	.controller("ssProfileController", function() {})
