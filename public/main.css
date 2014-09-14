@@ -254,8 +254,8 @@ header input {
 	height: 21px;
 	margin: 0 auto;
 	position: absolute;
-	top: 175px;
-	right: 18%;
+	top: 155px;
+	right: 17%;
 	width: 23px;
 	z-index: 2;
 }
@@ -373,6 +373,10 @@ header input {
 }
 .list-button.current {
 	background: url('images/sprite-hero-icons.png') 0 -51px no-repeat;
+}
+.no-csscolumns .list-button,
+.no-csscolumns .grid-button {
+	display: none;
 }
 
 /* messages */
